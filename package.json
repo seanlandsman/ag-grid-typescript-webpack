@@ -1,16 +1,17 @@
 {
-  "name": "typescript-webpack",
+  "name": "ag-grid-typescript-webpack",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --content-base src/ --progress --port 8080 --watch --mode development",
+    "start": "webpack-dev-server --inline --content-base src/ --progress --port 8090 --watch --mode development",
     "build": "webpack --mode production"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ag-grid-community": "^19.0.0",
+    "ag-grid-community": "^20.1.0",
+    "ag-grid-enterprise": "^20.1.0",
     "node-sass": "^4.6.0",
     "sass-loader": "^6.0.6",
     "ts-loader": "5.2.2",

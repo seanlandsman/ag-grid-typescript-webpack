@@ -2,6 +2,8 @@ import {Grid, GridOptions} from "ag-grid-community";
 
 import './styles.scss';
 
+declare var CustomTooltip;
+
 export class SimpleGrid {
     private gridOptions: GridOptions = {};
 
@@ -10,7 +12,13 @@ export class SimpleGrid {
             enableSorting: true,
             enableFilter: true,
             columnDefs: this.createColumnDefs(),
-            rowData: this.createRowData()
+            rowData: this.createRowData(),
+            components: {
+                customTooltip: CustomTooltip
+            },
+            defaultColDef: {
+                tooltipComponent: 'customTooltip'
+            }
         };
 
         let eGridDiv: HTMLElement = <HTMLElement>document.querySelector(selector);
@@ -20,7 +28,7 @@ export class SimpleGrid {
     // specify the columns
     private createColumnDefs() {
         return [
-            {headerName: "Make", field: "make"},
+            {headerName: "Make", field: "make", tooltipField: 'make'},
             {headerName: "Model", field: "model"},
             {headerName: "Price", field: "price"}
         ];
