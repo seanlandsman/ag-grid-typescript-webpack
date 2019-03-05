@@ -6,20 +6,17 @@
 
 // 3) CI will be important to ensure module code isn't accidentally referenced and therefore implicitly included in any bundle
 
-// 4) Anything explosed in main.d.ts/js should be an interface if part of a module (see 3)
+// 4) Anything exposed in main.d.ts/js should be an interface if part of a module (see 3)
 
 import {Grid} from "ag-grid-community";
 
-// import {TooltipModule} from "ag-grid-community/dist/lib/tooltipModule";
-// import {SetFilterModule} from "ag-grid-enterprise/dist/lib/setFilterModule";
-// Grid.setModulesToInclude([TooltipModule, SetFilterModule]);
+import 'ag-grid-community/dist/lib/tooltipModule';
+import 'ag-grid-enterprise/dist/lib/setFilterModule';
 
 // for the "core" enterprise
 import 'ag-grid-enterprise';
 
 import {SimpleGrid} from "./SimpleGrid";
-
-
 
 new SimpleGrid('#myGrid');
 
