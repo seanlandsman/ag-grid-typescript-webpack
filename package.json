@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ag-grid-community": "^19.0.0",
+    "ag-grid-community": "^22.0.0",
     "node-sass": "^4.6.0",
     "sass-loader": "^6.0.6",
     "ts-loader": "5.2.2",
