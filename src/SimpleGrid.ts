@@ -1,19 +1,24 @@
-import {Grid, GridOptions} from "ag-grid-community";
+import {Grid, GridOptions, ModuleRegistry} from "@ag-grid-community/all-modules";
+import {ClientSideRowModelModule} from "@ag-grid-community/client-side-row-model";
+
+// or, if using Enterprise features
+// import {Grid, GridOptions, ModuleRegistry} from "@ag-grid-enterprise/all-modules";
+// import {ClientSideRowModelModule} from "@ag-grid-enterprise/all-modules";
+
+ModuleRegistry.register(ClientSideRowModelModule);
 
 import './styles.scss';
 
-export class SimpleGrid {
-    private gridOptions: GridOptions = {};
+class SimpleGrid {
+    private gridOptions: GridOptions = <GridOptions>{};
 
-    constructor(selector: string) {
+    constructor() {
         this.gridOptions = {
-            enableSorting: true,
-            enableFilter: true,
             columnDefs: this.createColumnDefs(),
             rowData: this.createRowData()
         };
 
-        let eGridDiv: HTMLElement = <HTMLElement>document.querySelector(selector);
+        let eGridDiv:HTMLElement = <HTMLElement>document.querySelector('#myGrid');
         new Grid(eGridDiv, this.gridOptions);
     }
 
@@ -35,4 +40,6 @@ export class SimpleGrid {
         ];
     }
 }
+
+new SimpleGrid();
 
